@@ -1,0 +1,6 @@
+﻿TB_SRA:
+LOAD [Ramo de Atividade], Divisões as Divisoes, [(DIVISÃO - 2digitos CNAE)] as [2dCnae]
+FROM [C:\teste_bi-master\files\spreadsheets\Setores e Ramos de Atividade.csv]
+(txt, utf8, embedded labels, delimiter is ';');
+store TB_SRA into ..\..\files\dataMirrors\TB_SRA.qvd;
+//drop table  TB_SRA

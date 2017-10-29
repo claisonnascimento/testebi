@@ -1,0 +1,161 @@
+
+TMP:
+LOAD cd_cnpj, fl_matriz, nm_razao_social, cd_natureza_juridica, de_natureza_juridica, 
+     nm_logradouro, nu_logradouro, cd_cep, nm_bairro, nm_municipio, sg_uf, de_situacao, 
+     de_classif_natureza_juridica,makedate(right(dt_abertura,4),left(dt_abertura,Index(dt_abertura,'/')-1),replace(right(left(dt_abertura,Index(dt_abertura,'/',2)-1),Index(dt_abertura,'/')),'/','')) as dt_abertura
+FROM [..\..\files\dataMirrors\TB_EMPRESAS.qvd] (qvd);
+
+JOIN
+
+LOAD cd_cnpj, vl_latitude, vl_longitude, vl_total_veiculos_antt, vl_total_veiculos_leves, 
+     vl_total_veiculos_pesados, fl_optante_simples, qt_filial, fl_optante_simei, 
+     de_saude_tributaria, de_nivel_atividade
+FROM [..\..\files\dataMirrors\TB_EMPRESAS_CALC.qvd] (qvd);
+
+LEFT JOIN 
+
+LOAD cd_cnpj, nu_ordem, cd_ramo_atividade, de_ramo_atividade,left(cd_ramo_atividade,2) as  [2dCnae]
+FROM [..\..\files\dataTransformed\TB_CNAE.qvd] (qvd)
+WHERE nu_ordem = 0;
+	
+LEFT JOIN
+
+LOAD [2dCnae] ,[Ramo de Atividade]
+FROM [..\..\files\dataMirrors\TB_SRA.qvd] (qvd);
+	
+	
+
+TMP2:
+LOAD
+IF((vl_total_veiculos_leves+vl_total_veiculos_pesados)>=0 AND  (vl_total_veiculos_leves+vl_total_veiculos_pesados)<=5,'0 a 5',
+		 IF((vl_total_veiculos_leves+vl_total_veiculos_pesados)>=6 AND  (vl_total_veiculos_leves+vl_total_veiculos_pesados)<=10,'6 a 10',
+		 IF((vl_total_veiculos_leves+vl_total_veiculos_pesados)>=11 AND  (vl_total_veiculos_leves+vl_total_veiculos_pesados)<=15,'11 a 15',
+		 IF((vl_total_veiculos_leves+vl_total_veiculos_pesados)>=16 AND  (vl_total_veiculos_leves+vl_total_veiculos_pesados)<=30,'16 a 30',
+		 IF((vl_total_veiculos_leves+vl_total_veiculos_pesados)>=31 AND  (vl_total_veiculos_leves+vl_total_veiculos_pesados)<=50,'31 a 50',
+		 'Acima 51'))))) as faixa_veiculos,
+		 IF(isnull(vl_total_veiculos_antt)=-1 or vl_total_veiculos_antt= '',0,1) AS fl_antt,
+		 autonumber(cd_ramo_atividade&'|'&de_ramo_atividade) as pk_cnae,
+		 autonumber(cd_cep&'|'&nm_logradouro&'|'& nu_logradouro&'|'&nm_bairro&'|'&nm_municipio&'|'&sg_uf&'|'&vl_latitude&'|'&vl_longitude) as pk_localidade,
+		 if(isnull([Ramo de Atividade])=-1 or [Ramo de Atividade]='','Atividade nao Mapeada',[Ramo de Atividade]) as [Ramo de Atividade Mod],
+		 if(isnull([2dCnae])=-1,-1,[2dCnae]) as pk_ra,
+		*
+RESIDENT TMP;
+
+DROP TABLE TMP;
+
+
+DIM_NIVEL_ATIVIDADE:
+LOAD DISTINCT de_nivel_atividade
+RESIDENT TMP2;
+
+DIM_CNAE: 
+LOAD DISTINCT pk_cnae, if(isnull(de_ramo_atividade)=-1,'Empresa sem CNAE Principal',de_ramo_atividade) as cnae_principal
+RESIDENT TMP2;
+
+
+DIM_LOCALIDADE:
+LOAD DISTINCT pk_localidade,cd_cep,nm_logradouro, nu_logradouro, nm_bairro, nm_municipio, sg_uf, vl_latitude, vl_longitude
+RESIDENT TMP2;
+
+DIM_RAMO_ATIVIDADE:
+LOAD DISTINCT pk_ra,[Ramo de Atividade Mod] as [Ramo de Atividade]
+RESIDENT TMP2;
+
+DIM_ANTT:
+LOAD * INLINE [
+    fl_antt, ds_antt
+    1, SIM
+    0, NAO
+];
+
+DIM_SIMPLES:
+LOAD * INLINE [
+    fl_optante_simples, ds_optante_simples
+    1, SIM
+    0, NAO
+];
+
+DIM_SIMEI:
+LOAD * INLINE [
+    fl_optante_simei, ds_optante_simei
+    1, SIM
+    0, NAO
+];
+
+
+/*
+DIM_RAMO_ATIVIDADE:
+
+LOAD DISTINCT   [2dCnae] , if(isnull([Ramo de Atividade])=-1 or [Ramo de Atividade]='','Atividade nao Mapeada',[Ramo de Atividade]) as [Ramo de Atividade]
+FROM [C:\teste_bi-master\files\dataMirrors\TB_SRA.qvd] (qvd);
+*/
+
+
+
+ 
+
+FAT:
+LOAD     fl_matriz,
+         fl_optante_simples,
+		 fl_optante_simei,
+		 de_classif_natureza_juridica,
+		 de_situacao,
+		 pk_cnae,
+		 pk_localidade,	
+		 fl_antt,
+		 de_nivel_atividade,
+		 dt_abertura,
+		 pk_ra,
+		 faixa_veiculos,
+		 COUNT(cd_cnpj) AS qtd_empresas
+		 
+RESIDENT TMP2
+GROUP BY fl_matriz,
+         fl_optante_simples,
+		 fl_optante_simei,
+		 de_classif_natureza_juridica,
+		 de_situacao,
+		 pk_cnae,
+		 pk_localidade,	
+		 fl_antt,
+		 de_nivel_atividade,
+		 dt_abertura,
+		 pk_ra,
+		 faixa_veiculos
+
+ ; 
+ 
+DROP TABLE TMP2;
+ 
+
+MinMaxDate: 
+Load Min(dt_abertura) as MinDate, Max(dt_abertura) as MaxDate resident FAT;
+Let vMinDate = Peek('MinDate',-1,'MinMaxDate') - 1;
+Let vMaxDate = Peek('MaxDate',-1,'MinMaxDate') ;
+Drop Table MinMaxDate;
+MasterCalendar:
+Load Date as dt_abertura,
+Year(Date) as Year,
+Month(Date) as Month,
+Day(Date) as Day;
+Load Date(recno()+$(vMinDate)) as Date Autogenerate vMaxDate - vMinDate; 
+
+
+
+STORE DIM_NIVEL_ATIVIDADE into ..\..\files\storage_pbi\DIM_NIVEL_ATIVIDADE.txt (txt, delimiter is ';' );
+STORE DIM_CNAE into ..\..\files\storage_pbi\DIM_CNAE.txt (txt, delimiter is ';' );
+STORE DIM_LOCALIDADE  into ..\..\files\storage_pbi\DIM_LOCALIDADE.txt (txt, delimiter is ';' );
+STORE DIM_ANTT  into ..\..\files\storage_pbi\DIM_ANTT.txt (txt, delimiter is ';' );
+STORE DIM_SIMPLES  into ..\..\files\storage_pbi\DIM_SIMPLES.txt (txt, delimiter is ';' );
+STORE DIM_SIMEI  into ..\..\files\storage_pbi\DIM_SIMEI.txt (txt, delimiter is ';' );
+STORE DIM_RAMO_ATIVIDADE  into ..\..\files\storage_pbi\DIM_RAMO_ATIVIDADE.txt (txt, delimiter is ';' );
+STORE FAT  into ..\..\files\storage_pbi\FAT.txt (txt, delimiter is ';' );
+STORE MasterCalendar  into ..\..\files\storage_pbi\MasterCalendar.txt (txt, delimiter is ';' );
+ 
+EXIT SCRIPT
+
+
+
+
+
+

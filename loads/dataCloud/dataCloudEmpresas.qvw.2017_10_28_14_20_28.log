@@ -1,0 +1,185 @@
+﻿2017-10-28 12:20:27      Execução iniciada.
+2017-10-28 12:20:27      QlikView Desktop Version      12.10.0+2016-11-15 10:26:20.HEAD.Component.Version
+2017-10-28 12:20:27      CPU Target                    x64
+2017-10-28 12:20:27      Operating System              Windows 10 Pro  (64 bit edition)
+2017-10-28 12:20:27      Wow64 mode                    Not using Wow64
+2017-10-28 12:20:27      Language                      0416 Português (Brasil) Portuguese
+2017-10-28 12:20:27      Country                       55 Brasil Brazil
+2017-10-28 12:20:27      MDAC Version                  6.3.9600.16384
+2017-10-28 12:20:27      MDAC Full Install Version     6.3.9600.16384
+2017-10-28 12:20:27      PreferredCompression          2
+2017-10-28 12:20:27      EnableParallelReload          1
+2017-10-28 12:20:27      ParallelizeQvdLoads           1
+2017-10-28 12:20:27      AutoSaveAfterReload           0
+2017-10-28 12:20:27      BackupBeforeReload            0
+2017-10-28 12:20:27      EnableFlushLog                0
+2017-10-28 12:20:27      SaveInfoWhenSavingFile        0
+2017-10-28 12:20:27      UserLogfileCharset            65001
+2017-10-28 12:20:27      OdbcLoginTimeout              -1
+2017-10-28 12:20:27      OdbcConnectionTimeout         -1
+2017-10-28 12:20:27      LongestPossibleLine           1048576
+2017-10-28 12:20:27      MaxCoreMask                   -1
+2017-10-28 12:20:27      ScriptWantsDbWrite            false
+2017-10-28 12:20:27      ScriptWantsExe                false
+2017-10-28 12:20:27      LogFile CodePage Used:        65001
+2017-10-28 12:20:27      UseMemoryFillPattern          1
+2017-10-28 12:20:27      ScriptMode                    Legacy (gives greater system access) (aka qv11 mode)
+2017-10-28 12:20:27      SequentialThreadCount         2165
+2017-10-28 12:20:27      NumberOfCores (effective)     4
+2017-10-28 12:20:27      ReloadCodebase                Classic
+2017-10-28 12:20:27      Reload Executed By            claison-pc\claison
+2017-10-28 12:20:27      Process Executing             QlikView Desktop
+2017-10-28 12:20:27      Process ID                    8316
+2017-10-28 12:20:27 0002 TMP:
+2017-10-28 12:20:27 0003 LOAD cd_cnpj, fl_matriz, nm_razao_social, cd_natureza_juridica, de_natureza_juridica, 
+2017-10-28 12:20:27 0004      nm_logradouro, nu_logradouro, cd_cep, nm_bairro, nm_municipio, sg_uf, de_situacao, 
+2017-10-28 12:20:27 0005      de_classif_natureza_juridica,makedate(right(dt_abertura,4),left(dt_abertura,Index(dt_abertura,'/')-1),replace(right(left(dt_abertura,Index(dt_abertura,'/',2)-1),Index(dt_abertura,'/')),'/','')) as dt_abertura
+2017-10-28 12:20:27 0006 FROM [..\..\files\dataMirrors\TB_EMPRESAS.qvd] (qvd)
+2017-10-28 12:20:28      	14 campos encontrados: cd_cnpj, fl_matriz, nm_razao_social, cd_natureza_juridica, de_natureza_juridica, nm_logradouro, nu_logradouro, cd_cep, nm_bairro, nm_municipio, sg_uf, de_situacao, de_classif_natureza_juridica, dt_abertura, 
+2017-10-28 12:20:28      10.000 registros lidos
+2017-10-28 12:20:28 0008 JOIN
+2017-10-28 12:20:28 0009 
+2017-10-28 12:20:28 0010 LOAD cd_cnpj, vl_latitude, vl_longitude, vl_total_veiculos_antt, vl_total_veiculos_leves, 
+2017-10-28 12:20:28 0011      vl_total_veiculos_pesados, fl_optante_simples, qt_filial, fl_optante_simei, 
+2017-10-28 12:20:28 0012      de_saude_tributaria, de_nivel_atividade
+2017-10-28 12:20:28 0013 FROM [..\..\files\dataMirrors\TB_EMPRESAS_CALC.qvd] (qvd)
+2017-10-28 12:20:28      	11 campos encontrados: cd_cnpj, vl_latitude, vl_longitude, vl_total_veiculos_antt, vl_total_veiculos_leves, vl_total_veiculos_pesados, fl_optante_simples, qt_filial, fl_optante_simei, de_saude_tributaria, de_nivel_atividade, 
+2017-10-28 12:20:28      10.000 registros lidos
+2017-10-28 12:20:28      Joining/Keeping
+2017-10-28 12:20:28 0015 LEFT JOIN 
+2017-10-28 12:20:28 0016 
+2017-10-28 12:20:28 0017 LOAD cd_cnpj, nu_ordem, cd_ramo_atividade, de_ramo_atividade,left(cd_ramo_atividade,2) as  [2dCnae]
+2017-10-28 12:20:28 0018 FROM [..\..\files\dataTransformed\TB_CNAE.qvd] (qvd)
+2017-10-28 12:20:28 0019 WHERE nu_ordem = 0
+2017-10-28 12:20:28      	5 campos encontrados: cd_cnpj, nu_ordem, cd_ramo_atividade, de_ramo_atividade, 2dCnae, 
+2017-10-28 12:20:28      7.687 registros lidos
+2017-10-28 12:20:28      Joining/Keeping
+2017-10-28 12:20:28 0021 LEFT JOIN
+2017-10-28 12:20:28 0022 
+2017-10-28 12:20:28 0023 LOAD [2dCnae] ,[Ramo de Atividade]
+2017-10-28 12:20:28 0024 FROM [..\..\files\dataMirrors\TB_SRA.qvd] (qvd)
+2017-10-28 12:20:28      	2 campos encontrados: 2dCnae, Ramo de Atividade, 
+2017-10-28 12:20:28      87 registros lidos
+2017-10-28 12:20:28      Joining/Keeping
+2017-10-28 12:20:28 0028 TMP2:
+2017-10-28 12:20:28 0029 LOAD
+2017-10-28 12:20:28 0030 IF((vl_total_veiculos_leves+vl_total_veiculos_pesados)>=0 AND  (vl_total_veiculos_leves+vl_total_veiculos_pesados)<=5,'0 a 5',
+2017-10-28 12:20:28 0031 		 IF((vl_total_veiculos_leves+vl_total_veiculos_pesados)>=6 AND  (vl_total_veiculos_leves+vl_total_veiculos_pesados)<=10,'6 a 10',
+2017-10-28 12:20:28 0032 		 IF((vl_total_veiculos_leves+vl_total_veiculos_pesados)>=11 AND  (vl_total_veiculos_leves+vl_total_veiculos_pesados)<=15,'11 a 15',
+2017-10-28 12:20:28 0033 		 IF((vl_total_veiculos_leves+vl_total_veiculos_pesados)>=16 AND  (vl_total_veiculos_leves+vl_total_veiculos_pesados)<=30,'16 a 30',
+2017-10-28 12:20:28 0034 		 IF((vl_total_veiculos_leves+vl_total_veiculos_pesados)>=31 AND  (vl_total_veiculos_leves+vl_total_veiculos_pesados)<=50,'31 a 50',
+2017-10-28 12:20:28 0035 		 'Acima 51'))))) as faixa_veiculos,
+2017-10-28 12:20:28 0036 		 IF(isnull(vl_total_veiculos_antt)=-1 or vl_total_veiculos_antt= '',0,1) AS fl_antt,
+2017-10-28 12:20:28 0037 		 autonumber(cd_ramo_atividade&'|'&de_ramo_atividade) as pk_cnae,
+2017-10-28 12:20:28 0038 		 autonumber(cd_cep&'|'&nm_logradouro&'|'& nu_logradouro&'|'&nm_bairro&'|'&nm_municipio&'|'&sg_uf&'|'&vl_latitude&'|'&vl_longitude) as pk_localidade,
+2017-10-28 12:20:28 0039 		 if(isnull([Ramo de Atividade])=-1 or [Ramo de Atividade]='','Atividade nao Mapeada',[Ramo de Atividade]) as [Ramo de Atividade Mod],
+2017-10-28 12:20:28 0040 		 if(isnull([2dCnae])=-1,-1,[2dCnae]) as pk_ra,
+2017-10-28 12:20:28 0041 		*
+2017-10-28 12:20:28 0042 RESIDENT TMP
+2017-10-28 12:20:28      	35 campos encontrados: faixa_veiculos, fl_antt, pk_cnae, pk_localidade, Ramo de Atividade Mod, pk_ra, 2dCnae, cd_cnpj, fl_matriz, nm_razao_social, cd_natureza_juridica, de_natureza_juridica, nm_logradouro, nu_logradouro, cd_cep, nm_bairro, nm_municipio, sg_uf, de_situacao, de_classif_natureza_juridica, dt_abertura, vl_latitude, vl_longitude, vl_total_veiculos_antt, vl_total_veiculos_leves, vl_total_veiculos_pesados, fl_optante_simples, qt_filial, fl_optante_simei, de_saude_tributaria, de_nivel_atividade, nu_ordem, cd_ramo_atividade, de_ramo_atividade, Ramo de Atividade, 
+2017-10-28 12:20:28      10.000 registros lidos
+2017-10-28 12:20:28 0044 DROP TABLE TMP
+2017-10-28 12:20:28 0047 DIM_NIVEL_ATIVIDADE:
+2017-10-28 12:20:28 0048 LOAD DISTINCT de_nivel_atividade
+2017-10-28 12:20:28 0049 RESIDENT TMP2
+2017-10-28 12:20:28      	1 campos encontrados: de_nivel_atividade, 
+2017-10-28 12:20:28      5 registros lidos
+2017-10-28 12:20:28 0051 DIM_CNAE: 
+2017-10-28 12:20:28 0052 LOAD DISTINCT pk_cnae, if(isnull(de_ramo_atividade)=-1,'Empresa sem CNAE Principal',de_ramo_atividade) as cnae_principal
+2017-10-28 12:20:28 0053 RESIDENT TMP2
+2017-10-28 12:20:28      	2 campos encontrados: pk_cnae, cnae_principal, 
+2017-10-28 12:20:28      1.824 registros lidos
+2017-10-28 12:20:28 0056 DIM_LOCALIDADE:
+2017-10-28 12:20:28 0057 LOAD DISTINCT pk_localidade,cd_cep,nm_logradouro, nu_logradouro, nm_bairro, nm_municipio, sg_uf, vl_latitude, vl_longitude
+2017-10-28 12:20:28 0058 RESIDENT TMP2
+2017-10-28 12:20:28      	9 campos encontrados: pk_localidade, cd_cep, nm_logradouro, nu_logradouro, nm_bairro, nm_municipio, sg_uf, vl_latitude, vl_longitude, 
+2017-10-28 12:20:28      9.981 registros lidos
+2017-10-28 12:20:28 0060 DIM_RAMO_ATIVIDADE:
+2017-10-28 12:20:28 0061 LOAD DISTINCT pk_ra,[Ramo de Atividade Mod] as [Ramo de Atividade]
+2017-10-28 12:20:28 0062 RESIDENT TMP2
+2017-10-28 12:20:28      	2 campos encontrados: pk_ra, Ramo de Atividade, 
+2017-10-28 12:20:28      81 registros lidos
+2017-10-28 12:20:28 0064 DIM_ANTT:
+2017-10-28 12:20:28 0065 LOAD * INLINE [
+2017-10-28 12:20:28 0066     fl_antt, ds_antt
+2017-10-28 12:20:28 0067     1, SIM
+2017-10-28 12:20:28 0068     0, NAO
+2017-10-28 12:20:28 0069 ]
+2017-10-28 12:20:28      	2 campos encontrados: fl_antt, ds_antt, 
+2017-10-28 12:20:28      2 registros lidos
+2017-10-28 12:20:28 0071 DIM_SIMPLES:
+2017-10-28 12:20:28 0072 LOAD * INLINE [
+2017-10-28 12:20:28 0073     fl_optante_simples, ds_optante_simples
+2017-10-28 12:20:28 0074     1, SIM
+2017-10-28 12:20:28 0075     0, NAO
+2017-10-28 12:20:28 0076 ]
+2017-10-28 12:20:28      	2 campos encontrados: fl_optante_simples, ds_optante_simples, 
+2017-10-28 12:20:28      2 registros lidos
+2017-10-28 12:20:28 0078 DIM_SIMEI:
+2017-10-28 12:20:28 0079 LOAD * INLINE [
+2017-10-28 12:20:28 0080     fl_optante_simei, ds_optante_simei
+2017-10-28 12:20:28 0081     1, SIM
+2017-10-28 12:20:28 0082     0, NAO
+2017-10-28 12:20:28 0083 ]
+2017-10-28 12:20:28      	2 campos encontrados: fl_optante_simei, ds_optante_simei, 
+2017-10-28 12:20:28      2 registros lidos
+2017-10-28 12:20:28 0097 FAT:
+2017-10-28 12:20:28 0098 LOAD     fl_matriz,
+2017-10-28 12:20:28 0099          fl_optante_simples,
+2017-10-28 12:20:28 0100 		 fl_optante_simei,
+2017-10-28 12:20:28 0101 		 de_classif_natureza_juridica,
+2017-10-28 12:20:28 0102 		 de_situacao,
+2017-10-28 12:20:28 0103 		 pk_cnae,
+2017-10-28 12:20:28 0104 		 pk_localidade,	
+2017-10-28 12:20:28 0105 		 fl_antt,
+2017-10-28 12:20:28 0106 		 de_nivel_atividade,
+2017-10-28 12:20:28 0107 		 dt_abertura,
+2017-10-28 12:20:28 0108 		 pk_ra,
+2017-10-28 12:20:28 0109 		 faixa_veiculos,
+2017-10-28 12:20:28 0110 		 COUNT(cd_cnpj) AS qtd_empresas
+2017-10-28 12:20:28 0111 		 
+2017-10-28 12:20:28 0112 RESIDENT TMP2
+2017-10-28 12:20:28 0113 GROUP BY fl_matriz,
+2017-10-28 12:20:28 0114          fl_optante_simples,
+2017-10-28 12:20:28 0115 		 fl_optante_simei,
+2017-10-28 12:20:28 0116 		 de_classif_natureza_juridica,
+2017-10-28 12:20:28 0117 		 de_situacao,
+2017-10-28 12:20:28 0118 		 pk_cnae,
+2017-10-28 12:20:28 0119 		 pk_localidade,	
+2017-10-28 12:20:28 0120 		 fl_antt,
+2017-10-28 12:20:28 0121 		 de_nivel_atividade,
+2017-10-28 12:20:28 0122 		 dt_abertura,
+2017-10-28 12:20:28 0123 		 pk_ra,
+2017-10-28 12:20:28 0124 		 faixa_veiculos
+2017-10-28 12:20:28 0125 
+2017-10-28 12:20:28 0126  
+2017-10-28 12:20:28      	13 campos encontrados: fl_matriz, fl_optante_simples, fl_optante_simei, de_classif_natureza_juridica, de_situacao, pk_cnae, pk_localidade, fl_antt, de_nivel_atividade, dt_abertura, pk_ra, faixa_veiculos, qtd_empresas, 
+2017-10-28 12:20:28      10.000 registros lidos
+2017-10-28 12:20:28 0128 DROP TABLE TMP2
+2017-10-28 12:20:28 0131 MinMaxDate: 
+2017-10-28 12:20:28 0132 Load Min(dt_abertura) as MinDate, Max(dt_abertura) as MaxDate resident FAT
+2017-10-28 12:20:28      	2 campos encontrados: MinDate, MaxDate, 
+2017-10-28 12:20:28      1 registros lidos
+2017-10-28 12:20:28 0133 Let vMinDate = Peek('MinDate',-1,'MinMaxDate') - 1
+2017-10-28 12:20:28 0134 Let vMaxDate = Peek('MaxDate',-1,'MinMaxDate') 
+2017-10-28 12:20:28 0135 Drop Table MinMaxDate
+2017-10-28 12:20:28 0136 MasterCalendar:
+2017-10-28 12:20:28 0137 Load Date as dt_abertura,
+2017-10-28 12:20:28 0138 Year(Date) as Year,
+2017-10-28 12:20:28 0139 Month(Date) as Month,
+2017-10-28 12:20:28 0140 Day(Date) as Day
+2017-10-28 12:20:28 0141 Load Date(recno()+15341) as Date Autogenerate vMaxDate - vMinDate
+2017-10-28 12:20:28      	4 campos encontrados: dt_abertura, Year, Month, Day, 
+2017-10-28 12:20:28      25.860 registros lidos
+2017-10-28 12:20:28 0145 STORE DIM_NIVEL_ATIVIDADE into ..\..\files\storage_pbi\DIM_NIVEL_ATIVIDADE.txt (txt, delimiter is ';' )
+2017-10-28 12:20:28 0146 STORE DIM_CNAE into ..\..\files\storage_pbi\DIM_CNAE.txt (txt, delimiter is ';' )
+2017-10-28 12:20:28 0147 STORE DIM_LOCALIDADE  into ..\..\files\storage_pbi\DIM_LOCALIDADE.txt (txt, delimiter is ';' )
+2017-10-28 12:20:28 0148 STORE DIM_ANTT  into ..\..\files\storage_pbi\DIM_ANTT.txt (txt, delimiter is ';' )
+2017-10-28 12:20:28 0149 STORE DIM_SIMPLES  into ..\..\files\storage_pbi\DIM_SIMPLES.txt (txt, delimiter is ';' )
+2017-10-28 12:20:28 0150 STORE DIM_SIMEI  into ..\..\files\storage_pbi\DIM_SIMEI.txt (txt, delimiter is ';' )
+2017-10-28 12:20:28 0151 STORE DIM_RAMO_ATIVIDADE  into ..\..\files\storage_pbi\DIM_RAMO_ATIVIDADE.txt (txt, delimiter is ';' )
+2017-10-28 12:20:28 0152 STORE FAT  into ..\..\files\storage_pbi\FAT.txt (txt, delimiter is ';' )
+2017-10-28 12:20:28 0153 STORE MasterCalendar  into ..\..\files\storage_pbi\MasterCalendar.txt (txt, delimiter is ';' )
+2017-10-28 12:20:28 0155 EXIT SCRIPT
+2017-10-28 12:20:28 0156 
+2017-10-28 12:20:28      Execução concluída.

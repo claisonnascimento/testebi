@@ -1,0 +1,40 @@
+﻿2017-10-28 11:32:19      Execução iniciada.
+2017-10-28 11:32:19      QlikView Desktop Version      12.10.0+2016-11-15 10:26:20.HEAD.Component.Version
+2017-10-28 11:32:19      CPU Target                    x64
+2017-10-28 11:32:19      Operating System              Windows 10 Pro  (64 bit edition)
+2017-10-28 11:32:19      Wow64 mode                    Not using Wow64
+2017-10-28 11:32:19      Language                      0416 Português (Brasil) Portuguese
+2017-10-28 11:32:19      Country                       55 Brasil Brazil
+2017-10-28 11:32:19      MDAC Version                  6.3.9600.16384
+2017-10-28 11:32:19      MDAC Full Install Version     6.3.9600.16384
+2017-10-28 11:32:19      PreferredCompression          2
+2017-10-28 11:32:19      EnableParallelReload          1
+2017-10-28 11:32:19      ParallelizeQvdLoads           1
+2017-10-28 11:32:19      AutoSaveAfterReload           0
+2017-10-28 11:32:19      BackupBeforeReload            0
+2017-10-28 11:32:19      EnableFlushLog                0
+2017-10-28 11:32:19      SaveInfoWhenSavingFile        0
+2017-10-28 11:32:19      UserLogfileCharset            65001
+2017-10-28 11:32:19      OdbcLoginTimeout              -1
+2017-10-28 11:32:19      OdbcConnectionTimeout         -1
+2017-10-28 11:32:19      LongestPossibleLine           1048576
+2017-10-28 11:32:19      MaxCoreMask                   -1
+2017-10-28 11:32:19      ScriptWantsDbWrite            false
+2017-10-28 11:32:19      ScriptWantsExe                false
+2017-10-28 11:32:19      LogFile CodePage Used:        65001
+2017-10-28 11:32:19      UseMemoryFillPattern          1
+2017-10-28 11:32:19      ScriptMode                    Legacy (gives greater system access) (aka qv11 mode)
+2017-10-28 11:32:19      SequentialThreadCount         74
+2017-10-28 11:32:19      NumberOfCores (effective)     4
+2017-10-28 11:32:19      ReloadCodebase                Classic
+2017-10-28 11:32:19      Reload Executed By            claison-pc\claison
+2017-10-28 11:32:19      Process Executing             QlikView Desktop
+2017-10-28 11:32:19      Process ID                    4656
+2017-10-28 11:32:19 0002 TB_SRA:
+2017-10-28 11:32:19 0003 LOAD [Ramo de Atividade], Divisões as Divisoes, [(DIVISÃO - 2digitos CNAE)] as [2dCnae]
+2017-10-28 11:32:19 0004 FROM [C:\teste_bi-master\files\spreadsheets\Setores e Ramos de Atividade.csv]
+2017-10-28 11:32:19 0005 (txt, utf8, embedded labels, delimiter is ';')
+2017-10-28 11:32:19      	3 campos encontrados: Ramo de Atividade, Divisoes, 2dCnae, 
+2017-10-28 11:32:19      87 registros lidos
+2017-10-28 11:32:19 0005 store TB_SRA into ..\..\files\dataMirrors\TB_SRA.qvd
+2017-10-28 11:32:19      Execução concluída.

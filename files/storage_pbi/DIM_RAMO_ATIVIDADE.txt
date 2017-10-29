@@ -1,0 +1,82 @@
+﻿pk_ra;Ramo de Atividade
+-1;Atividade nao Mapeada
+10;Bens de Consumo
+45;Varejo
+47;Atividade nao Mapeada
+96;Atividade nao Mapeada
+14;Atividade nao Mapeada
+64;Bens de Capital
+46;Atacado
+94;Atividade nao Mapeada
+42;Atividade nao Mapeada
+82;Atividade nao Mapeada
+74;Atividade nao Mapeada
+02;Atividade nao Mapeada
+69;Serviços Profissionais e Técnicos
+78;Atividade nao Mapeada
+43;Atividade nao Mapeada
+01;Produtos de Agropecuária
+86;Serviços de Saúde
+59;Atividade nao Mapeada
+68;Serviços Administrativos
+71;Atividade nao Mapeada
+31;Atividade nao Mapeada
+66;Atividade nao Mapeada
+63;Atividade nao Mapeada
+56;Atividade nao Mapeada
+85;Serviços de Educação
+95;Atividade nao Mapeada
+13;Têxteis
+16;Atividade nao Mapeada
+33;Serviços Diversos
+49;Transporte
+81;Atividade nao Mapeada
+73;Atividade nao Mapeada
+08;Atividade nao Mapeada
+32;Diversos
+35;Energia
+20;Atividade nao Mapeada
+65;Atividade nao Mapeada
+41;Indústria da Construção
+23;Atividade nao Mapeada
+58;Telecom
+53;Atividade nao Mapeada
+93;Atividade nao Mapeada
+25;Atividade nao Mapeada
+70;Atividade nao Mapeada
+55;Serviços de Alojamento/Alimentação
+17;Papel e Celulose
+18;Atividade nao Mapeada
+15;Atividade nao Mapeada
+62;Indústria Digital
+38;Atividade nao Mapeada
+90;Atividade nao Mapeada
+52;Atividade nao Mapeada
+77;Atividade nao Mapeada
+80;Atividade nao Mapeada
+36;Serviços de Saneamento Básico
+22;Atividade nao Mapeada
+26;Eletroeletrônicos
+79;Atividade nao Mapeada
+28;Atividade nao Mapeada
+84;Atividade nao Mapeada
+61;Atividade nao Mapeada
+29;Indústria Automotiva
+24;Siderúrgica-Metalurgia
+05;Mineração
+09;Atividade nao Mapeada
+87;Atividade nao Mapeada
+72;Atividade nao Mapeada
+37;Atividade nao Mapeada
+03;Atividade nao Mapeada
+60;Atividade nao Mapeada
+99;Atividade nao Mapeada
+06;Atividade nao Mapeada
+27;Atividade nao Mapeada
+50;Atividade nao Mapeada
+88;Atividade nao Mapeada
+19;Química-Petroquímica
+92;Atividade nao Mapeada
+75;Atividade nao Mapeada
+11;Atividade nao Mapeada
+07;Atividade nao Mapeada

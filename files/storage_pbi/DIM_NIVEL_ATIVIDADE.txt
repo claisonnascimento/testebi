@@ -1,0 +1,6 @@
+﻿de_nivel_atividade
+MUITO BAIXA
+ALTA
+BAIXA
+INATIVA
+MEDIA

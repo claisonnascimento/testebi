@@ -1,0 +1,24 @@
+LOAD cd_cnpj, 
+	 SubField(nu_ordem,'~@~') as nu_ordem,RowNo() as linha
+	 
+FROM [..\..\files\dataMirrors\TB_CNAE.qvd] (qvd);
+join 
+LOAD cd_cnpj, 
+	 SubField(cd_ramo_atividade,'~@~') as cd_ramo_atividade ,RowNo() as linha
+	 
+FROM [..\..\files\dataMirrors\TB_CNAE.qvd] (qvd);
+join 
+LOAD cd_cnpj, 
+	 SubField(de_ramo_atividade,'~@~') as de_ramo_atividade,RowNo() as linha
+FROM [..\..\files\dataMirrors\TB_CNAE.qvd] (qvd);
+
+drop field linha;
+
+store TB_CNAE into ..\..\files\dataTransformed\TB_CNAE.qvd;
+//drop table TB_CNAE; 
+
+
+
+
+
+

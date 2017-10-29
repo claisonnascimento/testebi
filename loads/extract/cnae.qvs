@@ -1,0 +1,6 @@
+TB_CNAE:
+LOAD cd_cnpj, nu_ordem, cd_ramo_atividade, de_ramo_atividade
+FROM [..\..\files\spreadsheets\CNAE.csv]
+(txt, utf8, embedded labels, delimiter is ';', msq);
+store TB_CNAE into ..\..\files\dataMirrors\TB_CNAE.qvd;
+drop table  TB_CNAE;

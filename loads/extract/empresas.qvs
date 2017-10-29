@@ -1,0 +1,6 @@
+ODBC CONNECT TO neoway (XUserId is IVGDBYdNTDdOGZVMTTSB, XPassword is CZOZYYIGTBNGD);
+TB_EMPRESAS:
+select * 
+from public.empresas;
+store TB_EMPRESAS into ..\..\files\dataMirrors\TB_EMPRESAS.qvd;
+drop table  TB_EMPRESAS;

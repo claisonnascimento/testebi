@@ -1,0 +1,41 @@
+﻿2017-10-28 00:52:26      Execução iniciada.
+2017-10-28 00:52:26      QlikView Desktop Version      12.10.0+2016-11-15 10:26:20.HEAD.Component.Version
+2017-10-28 00:52:26      CPU Target                    x64
+2017-10-28 00:52:26      Operating System              Windows 10 Pro  (64 bit edition)
+2017-10-28 00:52:26      Wow64 mode                    Not using Wow64
+2017-10-28 00:52:26      Language                      0416 Português (Brasil) Portuguese
+2017-10-28 00:52:26      Country                       55 Brasil Brazil
+2017-10-28 00:52:26      MDAC Version                  6.3.9600.16384
+2017-10-28 00:52:26      MDAC Full Install Version     6.3.9600.16384
+2017-10-28 00:52:26      PreferredCompression          2
+2017-10-28 00:52:26      EnableParallelReload          1
+2017-10-28 00:52:26      ParallelizeQvdLoads           1
+2017-10-28 00:52:26      AutoSaveAfterReload           0
+2017-10-28 00:52:26      BackupBeforeReload            0
+2017-10-28 00:52:26      EnableFlushLog                0
+2017-10-28 00:52:26      SaveInfoWhenSavingFile        0
+2017-10-28 00:52:26      UserLogfileCharset            65001
+2017-10-28 00:52:26      OdbcLoginTimeout              -1
+2017-10-28 00:52:26      OdbcConnectionTimeout         -1
+2017-10-28 00:52:26      LongestPossibleLine           1048576
+2017-10-28 00:52:26      MaxCoreMask                   -1
+2017-10-28 00:52:26      ScriptWantsDbWrite            false
+2017-10-28 00:52:26      ScriptWantsExe                false
+2017-10-28 00:52:26      LogFile CodePage Used:        65001
+2017-10-28 00:52:26      UseMemoryFillPattern          1
+2017-10-28 00:52:26      ScriptMode                    Legacy (gives greater system access) (aka qv11 mode)
+2017-10-28 00:52:26      SequentialThreadCount         74
+2017-10-28 00:52:26      NumberOfCores (effective)     4
+2017-10-28 00:52:26      ReloadCodebase                Classic
+2017-10-28 00:52:26      Reload Executed By            claison-pc\claison
+2017-10-28 00:52:26      Process Executing             QlikView Desktop
+2017-10-28 00:52:26      Process ID                    2976
+2017-10-28 00:52:26 0002 ODBC CONNECT TO *** (XUserId *** ***, XPassword *** ***)
+2017-10-28 00:52:26 0002 TB_EMPRESAS:
+2017-10-28 00:52:26 0003 select * 
+2017-10-28 00:52:26 0004 from public.empresas
+2017-10-28 00:52:27      	14 campos encontrados: cd_cnpj, fl_matriz, dt_abertura, nm_razao_social, cd_natureza_juridica, de_natureza_juridica, nm_logradouro, nu_logradouro, cd_cep, nm_bairro, nm_municipio, sg_uf, de_situacao, de_classif_natureza_juridica, 
+2017-10-28 00:52:27      10.000 registros lidos
+2017-10-28 00:52:27 0005 store TB_EMPRESAS into ..\..\files\dataMirrors\TB_EMPRESAS.qvd
+2017-10-28 00:52:27 0006 drop table  TB_EMPRESAS
+2017-10-28 00:52:27      Execução concluída.

@@ -1,0 +1,56 @@
+﻿2017-10-28 09:08:11      Execução iniciada.
+2017-10-28 09:08:11      QlikView Desktop Version      12.10.0+2016-11-15 10:26:20.HEAD.Component.Version
+2017-10-28 09:08:11      CPU Target                    x64
+2017-10-28 09:08:11      Operating System              Windows 10 Pro  (64 bit edition)
+2017-10-28 09:08:11      Wow64 mode                    Not using Wow64
+2017-10-28 09:08:11      Language                      0416 Português (Brasil) Portuguese
+2017-10-28 09:08:11      Country                       55 Brasil Brazil
+2017-10-28 09:08:11      MDAC Version                  6.3.9600.16384
+2017-10-28 09:08:11      MDAC Full Install Version     6.3.9600.16384
+2017-10-28 09:08:11      PreferredCompression          2
+2017-10-28 09:08:11      EnableParallelReload          1
+2017-10-28 09:08:11      ParallelizeQvdLoads           1
+2017-10-28 09:08:11      AutoSaveAfterReload           0
+2017-10-28 09:08:11      BackupBeforeReload            0
+2017-10-28 09:08:11      EnableFlushLog                0
+2017-10-28 09:08:11      SaveInfoWhenSavingFile        0
+2017-10-28 09:08:11      UserLogfileCharset            65001
+2017-10-28 09:08:11      OdbcLoginTimeout              -1
+2017-10-28 09:08:11      OdbcConnectionTimeout         -1
+2017-10-28 09:08:11      LongestPossibleLine           1048576
+2017-10-28 09:08:11      MaxCoreMask                   -1
+2017-10-28 09:08:11      ScriptWantsDbWrite            false
+2017-10-28 09:08:11      ScriptWantsExe                false
+2017-10-28 09:08:11      LogFile CodePage Used:        65001
+2017-10-28 09:08:11      UseMemoryFillPattern          1
+2017-10-28 09:08:11      ScriptMode                    Legacy (gives greater system access) (aka qv11 mode)
+2017-10-28 09:08:11      SequentialThreadCount         581
+2017-10-28 09:08:11      NumberOfCores (effective)     4
+2017-10-28 09:08:11      ReloadCodebase                Classic
+2017-10-28 09:08:11      Reload Executed By            claison-pc\claison
+2017-10-28 09:08:11      Process Executing             QlikView Desktop
+2017-10-28 09:08:11      Process ID                    8088
+2017-10-28 09:08:11 0002 LOAD cd_cnpj, 
+2017-10-28 09:08:11 0003 	 SubField(nu_ordem,'~@~') as nu_ordem,RowNo() as linha
+2017-10-28 09:08:11 0004 	 
+2017-10-28 09:08:11 0005 FROM [..\..\files\dataMirrors\TB_CNAE.qvd] (qvd)
+2017-10-28 09:08:11      	3 campos encontrados: cd_cnpj, nu_ordem, linha, 
+2017-10-28 09:08:11      15.812 registros lidos
+2017-10-28 09:08:11 0005 join 
+2017-10-28 09:08:11 0006 LOAD cd_cnpj, 
+2017-10-28 09:08:11 0007 	 SubField(cd_ramo_atividade,'~@~') as cd_ramo_atividade ,RowNo() as linha
+2017-10-28 09:08:11 0008 	 
+2017-10-28 09:08:11 0009 FROM [..\..\files\dataMirrors\TB_CNAE.qvd] (qvd)
+2017-10-28 09:08:11      	3 campos encontrados: cd_cnpj, cd_ramo_atividade, linha, 
+2017-10-28 09:08:11      15.812 registros lidos
+2017-10-28 09:08:11      Joining/Keeping
+2017-10-28 09:08:11 0010 join 
+2017-10-28 09:08:11 0011 LOAD cd_cnpj, 
+2017-10-28 09:08:11 0012 	 SubField(de_ramo_atividade,'~@~') as de_ramo_atividade,RowNo() as linha
+2017-10-28 09:08:11 0013 FROM [..\..\files\dataMirrors\TB_CNAE.qvd] (qvd)
+2017-10-28 09:08:11      	3 campos encontrados: cd_cnpj, de_ramo_atividade, linha, 
+2017-10-28 09:08:11      15.812 registros lidos
+2017-10-28 09:08:11      Joining/Keeping
+2017-10-28 09:08:11 0015 drop field linha
+2017-10-28 09:08:11 0017 store TB_CNAE into ..\..\files\dataTransformed\TB_CNAE.qvd
+2017-10-28 09:08:11      Execução concluída.

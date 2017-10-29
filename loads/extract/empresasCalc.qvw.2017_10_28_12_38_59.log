@@ -1,0 +1,40 @@
+﻿2017-10-28 10:38:59      Execução iniciada.
+2017-10-28 10:38:59      QlikView Desktop Version      12.10.0+2016-11-15 10:26:20.HEAD.Component.Version
+2017-10-28 10:38:59      CPU Target                    x64
+2017-10-28 10:38:59      Operating System              Windows 10 Pro  (64 bit edition)
+2017-10-28 10:38:59      Wow64 mode                    Not using Wow64
+2017-10-28 10:38:59      Language                      0416 Português (Brasil) Portuguese
+2017-10-28 10:38:59      Country                       55 Brasil Brazil
+2017-10-28 10:38:59      MDAC Version                  6.3.9600.16384
+2017-10-28 10:38:59      MDAC Full Install Version     6.3.9600.16384
+2017-10-28 10:38:59      PreferredCompression          2
+2017-10-28 10:38:59      EnableParallelReload          1
+2017-10-28 10:38:59      ParallelizeQvdLoads           1
+2017-10-28 10:38:59      AutoSaveAfterReload           0
+2017-10-28 10:38:59      BackupBeforeReload            0
+2017-10-28 10:38:59      EnableFlushLog                0
+2017-10-28 10:38:59      SaveInfoWhenSavingFile        0
+2017-10-28 10:38:59      UserLogfileCharset            65001
+2017-10-28 10:38:59      OdbcLoginTimeout              -1
+2017-10-28 10:38:59      OdbcConnectionTimeout         -1
+2017-10-28 10:38:59      LongestPossibleLine           1048576
+2017-10-28 10:38:59      MaxCoreMask                   -1
+2017-10-28 10:38:59      ScriptWantsDbWrite            false
+2017-10-28 10:38:59      ScriptWantsExe                false
+2017-10-28 10:38:59      LogFile CodePage Used:        65001
+2017-10-28 10:38:59      UseMemoryFillPattern          1
+2017-10-28 10:38:59      ScriptMode                    Legacy (gives greater system access) (aka qv11 mode)
+2017-10-28 10:38:59      SequentialThreadCount         99
+2017-10-28 10:38:59      NumberOfCores (effective)     4
+2017-10-28 10:38:59      ReloadCodebase                Classic
+2017-10-28 10:38:59      Reload Executed By            claison-pc\claison
+2017-10-28 10:38:59      Process Executing             QlikView Desktop
+2017-10-28 10:38:59      Process ID                    2456
+2017-10-28 10:38:59 0002 TB_EMPRESAS_CALC:
+2017-10-28 10:38:59 0003 LOAD cd_cnpj, vl_latitude, vl_longitude, vl_total_veiculos_antt, vl_total_veiculos_leves, vl_total_veiculos_pesados, fl_optante_simples, qt_filial, fl_optante_simei, de_saude_tributaria, de_nivel_atividade
+2017-10-28 10:38:59 0004 FROM [..\..\files\spreadsheets\empresasCalc.csv]
+2017-10-28 10:38:59 0005 (txt, utf8, embedded labels, delimiter is ';', msq)
+2017-10-28 10:38:59      	11 campos encontrados: cd_cnpj, vl_latitude, vl_longitude, vl_total_veiculos_antt, vl_total_veiculos_leves, vl_total_veiculos_pesados, fl_optante_simples, qt_filial, fl_optante_simei, de_saude_tributaria, de_nivel_atividade, 
+2017-10-28 10:38:59      10.000 registros lidos
+2017-10-28 10:38:59 0005 store TB_EMPRESAS_CALC into ..\..\files\dataMirrors\TB_EMPRESAS_CALC.qvd
+2017-10-28 10:38:59      Execução concluída.
